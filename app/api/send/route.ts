@@ -4,16 +4,17 @@ import { Resend } from "resend";
 import { MessageUsEmail } from "@/app/components/EmailMessage";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
+const fromEmail = process.env.FROM_EMAIL as string;
 
 export async function POST(req: NextRequest, res: NextResponse) {
   const { email, subject, message } = await req.json();
   console.log(email, subject, message);
   try {
     const data = await resend.emails.send({
-      from: fromEmail!,
+      from: fromEmail,
       to: [fromEmail, email],
       subject: subject,
+      text: 'Plain text content here',
       react: MessageUsEmail({subject, message }),
     });
     return NextResponse.json(data);
