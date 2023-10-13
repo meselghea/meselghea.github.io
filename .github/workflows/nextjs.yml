@@ -18,6 +18,12 @@ jobs:
         with:
           node-version: 16
 
+      - name: Set up Environment Secrets
+        run: |
+          echo "RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}" >> $GITHUB_ENV
+          echo "FROM_EMAIL=${{ secrets.FROM_EMAIL }}" >> $GITHUB_ENV
+        shell: bash
+
       - name: Install pnpm
         run: |
           npm install -g pnpm
@@ -47,6 +53,4 @@ jobs:
           publish_committer_name: GitHub Actions
           publish_committer_email: actions@github.com
 
-    env:
-      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-      FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+
