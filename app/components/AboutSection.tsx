@@ -73,7 +73,7 @@ const TAB_DATA = [
         <div className="py-4 my-4 text-lg"><div className="w-[300px] h-[210px] sm:w-[500px] sm:h-[350px] mx-auto"><Image src="/images/FSSE.png" width={900} height={500} alt=""></Image></div>Revou - Full Stack Software Engineering</div>
         <div className="py-4 my-4 text-lg"><div className="w-[300px] h-[210px] sm:w-[500px] sm:h-[350px] mx-auto"><Image src="/images/happyfit1.png" width={900} height={500} alt=""></Image></div>Happyfit - Potential New Comer </div>
         <div className="py-4 my-4 text-lg"><div className="w-[300px] h-[210px] sm:w-[500px] sm:h-[330px] mx-auto"><Image src="/images/besttl.png" width={900} height={500} alt=""></Image></div>Revou - Best Team Lead of FSDM May 2022 </div>
-        <div className="py-4 my-4 text-lg"><div className="w-[300px] h-[210px] sm:w-[500px] sm:h-[350px] mx-auto"><Image src="/images/certificateFSDM.png" width={900} height={500} alt=""></Image></div>Revou - Full Stack Digital Marketing </div>
+        <div className="py-4 my-4 text-lg"><div className="w-[300px] h-[210px] sm:w-[500px] sm:h-[350px] mx-auto"><Image src="/images/CertificateFSDM.png" width={900} height={500} alt=""></Image></div>Revou - Full Stack Digital Marketing </div>
         <div className="py-4 my-4 text-lg"><div className="w-[300px] h-[210px] sm:w-[500px] sm:h-[350px] mx-auto"><Image src="/images/jabatocertficate.png" width={900} height={500} alt=""></Image></div>Jabato - Excellent Employee Award in 2020 </div>
         </Carousel>
     ),
