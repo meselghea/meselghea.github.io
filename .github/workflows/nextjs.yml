@@ -23,11 +23,11 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        working-directory: ./your-project-directory
+        working-directory: .
 
       - name: Build with Next.js
         run: npm run build
-        working-directory: ./your-project-directory
+        working-directory: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -38,4 +38,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./your-project-directory/out
+          publish_dir: out
