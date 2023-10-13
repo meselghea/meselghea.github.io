@@ -20,8 +20,7 @@ jobs:
 
       - name: Install pnpm
         run: |
-          curl -o- -L https://unpkg.com/@pnpm/self-installer@6.x.js | node - add --global
-          export PATH="$PATH:$HOME/.pnpm-global/bin"
+          npm install -g pnpm
           pnpm --version
 
       - name: Install Dependencies
