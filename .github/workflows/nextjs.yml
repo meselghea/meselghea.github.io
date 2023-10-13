@@ -36,18 +36,18 @@ jobs:
     needs: build
 
     steps:
+      - name: Set up Environment Secrets
+        run: |
+          echo "FROM_EMAIL=${{ secrets.FROM_EMAIL }}" >> $GITHUB_ENV
+          echo "RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}" >> $GITHUB_ENV
+        shell: bash
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: out
 
-      - name: Use Secrets
-        run: |
-          # Access the secrets
-          FROM_EMAIL=${{ secrets.FROM_EMAIL }}
-          RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}
-          
-          # Now you can use these secrets in your workflow
-          echo "FROM_EMAIL: $FROM_EMAIL"
-          echo "RESEND_API_KEY: $RESEND_API_KEY"
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
