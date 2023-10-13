@@ -11,7 +11,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   console.log(email, subject, message);
   try {
     const data = await resend.emails.send({
-      from: fromEmail || "",
+      from: fromEmail!,
       to: [fromEmail, email],
       subject: subject,
       react: MessageUsEmail({subject, message }),
