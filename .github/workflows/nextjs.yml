@@ -17,14 +17,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install pnpm
-        run: npm install -g pnpm --global-style --prefix ${{ runner.tool_cache }}/pnpm
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          cache: 'pnpm'
-          path: ${{ runner.tool_cache }}/pnpm
+        run: |
+          npm install -g pnpm
+          export PATH="$PATH:$HOME/.npm-global/bin"
+          echo "::add-path::$HOME/.npm-global/bin"
+          pnpm --version
 
       - name: Install Dependencies
         run: pnpm install
