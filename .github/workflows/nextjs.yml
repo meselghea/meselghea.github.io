@@ -23,12 +23,6 @@ jobs:
           npm install -g pnpm
           pnpm --version
 
-      - name: Set up Environment Secrets
-        run: |
-          echo "RESEND_API_KEY='re_bWBEX3J1_6x4NJugsFY9PavHZtvg7NnUN'" >> $GITHUB_ENV
-          echo "FROM_EMAIL='onboarding@resend.dev'" >> $GITHUB_ENV
-        shell: bash
-
       - name: Install Dependencies
         run: pnpm install
         working-directory: .
@@ -53,5 +47,6 @@ jobs:
           publish_committer_name: GitHub Actions
           publish_committer_email: actions@github.com
 
-    environment:
-      RESEND_API_KEY: ${{ steps.build.outputs.RESEND_API_KEY }}
+    env:
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
